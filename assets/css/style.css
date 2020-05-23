@@ -1,0 +1,45 @@
+#todo-error {
+  color: rgba(243, 32, 32, 0.911);
+  font-size: 2em;
+}
+main {
+  min-height: 100vh;
+}
+.vh-60 {
+  min-height: 50vh;
+  z-index: 2;
+}
+.vh-20 {
+  min-height: 16vh;
+  z-index: 2;
+}
+.mainImg {
+  position: absolute;
+
+  width: 100%;
+}
+.p-absolute {
+  position: absolute;
+}
+.hidden {
+  display: none;
+}
+.my-card {
+  padding: 0.5rem;
+  color: rgb(245, 243, 240);
+  background-color: rgba(0, 0, 0, 0.781);
+  border-radius: 7px;
+}
+.action {
+  transition: 0.3s;
+
+  cursor: pointer;
+}
+.degree-box {
+  display: inline;
+  position: relative;
+}
+.degree {
+  position: absolute;
+  font-size: xx-small;
+}
