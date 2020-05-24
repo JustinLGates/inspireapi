@@ -2,15 +2,13 @@ import store from "../store.js";
 
 // @ts-ignore
 const todoApi = axios.create({
-  baseURL: "https://bcw-sandbox.herokuapp.com/api/YOURNAME/todos/",
-  timeout: 8000
+  baseURL: "https://bcw-sandbox.herokuapp.com/api/mark/todos/",
+  timeout: 8000,
 });
 
 class TodoService {
   getTodos() {
-    console.log("Getting the Todo List");
-    todoApi.get();
-    //TODO Handle this response from the server
+    todoApi.get().then((res) => console.log(res.data.data));
   }
 
   addTodoAsync(todo) {
@@ -19,7 +17,7 @@ class TodoService {
   }
 
   toggleTodoStatusAsync(todoId) {
-    let todo = store.State.todos.find(todo => todo._id == todoId);
+    let todo = store.State.todos.find((todo) => todo._id == todoId);
     //TODO Make sure that you found a todo,
     //		and if you did find one
     //		change its completed status to whatever it is not (ex: false => true or true => false)

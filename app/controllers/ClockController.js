@@ -1,16 +1,13 @@
-let date = new Date();
-
-function checkTime() {
-  console.log(date.getDay());
-  console.log(date.getMonth());
-  console.log(date.getHours() > 12 ? date.getHours() % 12 : date.getHours());
-  console.log(date.getMinutes());
-
-  return date;
+import Store from "../store.js";
+import ClockService from "../services/ClockService.js";
+import store from "../store.js";
+function _drawClock() {
+  let template = store.State.clock.Template;
+  document.getElementById("clock").innerHTML = template;
 }
 
 export default class clockController {
   constructor() {
-    checkTime();
+    Store.subscribe("clock", _drawClock);
   }
 }

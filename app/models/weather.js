@@ -1,6 +1,6 @@
 export default class Weather {
   constructor(data) {
-    console.log("[RAW WEATHER API DATA]", data);
+    // console.log("[RAW WEATHER API DATA]", data);
     //      check out the other data that comes back and see if there is anything you want to try
     this.city = data.name;
     this.kelvin = data.main.temp;
