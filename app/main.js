@@ -3,6 +3,7 @@ import ImageController from "./controllers/image-controller.js";
 import QuoteController from "./controllers/quote-controller.js";
 import ToDoController from "./controllers/todo-controller.js";
 import ClockController from "./controllers/clockController.js";
+import userController from "./controllers/UserController.js";
 
 //TODO Dont forget to register all your controllers
 class App {
@@ -12,6 +13,7 @@ class App {
     this.toDoController = new ToDoController();
     this.quoteController = new QuoteController();
     this.weatherController = new WeatherController();
+    this.userController = new userController();
   }
 }
 

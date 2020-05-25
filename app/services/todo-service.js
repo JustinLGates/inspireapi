@@ -43,8 +43,7 @@ class TodoService {
     } else if (!todo.completed) {
       todo.completed = true;
     }
-    console.log(todo);
-    todoApi.put(todoId, todo);
+    todoApi.put(todoId, todo).then((res) => this.getTodos());
   }
 
   removeTodo(id) {

@@ -109,7 +109,7 @@ The todos portion of this project is the largest and will probably take the most
 ### Visualization
 
 - The data from the services are each rendered:
-  - [ ] Quote: Quote always displayed and Author reveals on hover
+  - [x] Quote: Quote always displayed and Author reveals on hover
   - [x] Image: The image is required, however the additional data is optional
   - [x] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
   - [ ] Todo: Todo's are shown on the page including a count of remaining tasks to complete
@@ -127,7 +127,8 @@ The todos portion of this project is the largest and will probably take the most
 
 ### EXTENSION IDEAS
 
-- On hover the quote should show the author of the quote and disappear when not hovered over
+-[x] On hover the quote should show the author of the quote and disappear when not hovered over
+
 - Allow the user to set their name and have it save to localStorage
 - Change the message from Good Morning to Good Afternoon, Evening as appropriate.
 - Allow the user to toggle the clock from, 12hr to 24hr.

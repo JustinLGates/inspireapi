@@ -2,14 +2,21 @@ import TodoService from "../services/todo-service.js";
 import store from "../store.js";
 
 function _drawTodos() {
-  let template = "";
+  let tasksRemaining = 0;
+  let template2 = "";
   let todos = store.State.todos;
   if (todos) {
-    todos.forEach((td) => (template += td.Template));
-    document.getElementById("todos").innerHTML = template;
+    todos.forEach((td) => {
+      template2 += td.Template;
+      if (!td.completed) {
+        tasksRemaining++;
+      }
+    });
+    document.getElementById("taskTotal").innerText = tasksRemaining.toString();
+    document.getElementById("todos").innerHTML = template2;
     return;
   }
-  document.getElementById("todos").innerHTML = template;
+  document.getElementById("todos").innerHTML = template2;
 }
 let todosOpen = false;
 function toggleShowHide() {

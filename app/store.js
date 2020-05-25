@@ -2,6 +2,7 @@ import Weather from "./models/weather.js";
 import Clock from "./models/Clock.js";
 import Todo from "./models/Todo.js";
 import Quote from "./models/quote.js";
+import User from "./models/user.js";
 let _state = {
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
@@ -12,6 +13,8 @@ let _state = {
   image: "",
   /**@type {Clock} */
   clock: null,
+  /**@type {User} */
+  user: null,
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -23,6 +26,7 @@ let _listeners = {
   todos: [],
   image: [],
   clock: [],
+  user: [],
 };
 
 /**
@@ -75,6 +79,20 @@ class Store {
     _validateProp(prop);
     _state[prop] = data;
     _listeners[prop].forEach((fn) => fn());
+  }
+
+  saveUser() {
+    window.localStorage.setItem("user", JSON.stringify(this.State.user));
+  }
+  loadUser() {
+    let jsonData = window.localStorage.getItem("user");
+    if (jsonData) {
+      let newUser = new User(JSON.parse(jsonData));
+      this.commit("user", newUser);
+      return;
+    }
+    let newUser = (this.State.user = new User({ name: "" }));
+    this.commit("user", newUser);
   }
 }
 
