@@ -1,4 +1,5 @@
 import store from "../store.js";
+import Quote from "../models/quote.js";
 
 // @ts-ignore
 const _quoteApi = axios.create({
@@ -8,8 +9,9 @@ const _quoteApi = axios.create({
 class QuoteService {
   getQuote() {
     _quoteApi.get("").then((res) => {
-      let quote = res.data.quote.body;
-      store.commit("quote", quote);
+      let quote = { body: res.data.quote.body, author: res.data.quote.author };
+      let newQuote = new Quote(quote);
+      store.commit("quote", newQuote);
     });
   }
 }

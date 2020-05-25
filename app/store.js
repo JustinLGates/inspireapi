@@ -1,13 +1,14 @@
 import Weather from "./models/weather.js";
 import Clock from "./models/Clock.js";
 import Todo from "./models/Todo.js";
-
+import Quote from "./models/quote.js";
 let _state = {
   /**@type {Weather} */
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
   /**@type {Todo []}*/
   todos: [],
-  quote: "",
+  /**@type { Quote } */
+  quote: null,
   image: "",
   /**@type {Clock} */
   clock: null,

@@ -11,6 +11,16 @@ function _drawTodos() {
   }
   document.getElementById("todos").innerHTML = template;
 }
+let todosOpen = false;
+function toggleShowHide() {
+  if (todosOpen) {
+    document.getElementById("todoSection").classList.add("hidden");
+    todosOpen = false;
+    return;
+  }
+  document.getElementById("todoSection").classList.remove("hidden");
+  todosOpen = true;
+}
 
 export default class TodoController {
   constructor() {
@@ -18,22 +28,24 @@ export default class TodoController {
     TodoService.getTodos();
   }
 
-  addTodo(e) {
-    e.preventDefault();
-    var form = e.target;
+  addTodo(event) {
+    event.preventDefault();
+    var form = event.target;
     var todo = {
-      //TODO build the todo object from the data that comes into this method
+      description: form.todo.value,
     };
-    // TodoService.addTodoAsync(todo);
+    TodoService.addTodo(todo);
+    form.reset();
   }
 
-  //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
   toggleTodoStatus(todoId) {
-    // TodoService.toggleTodoStatusAsync(todoId);
+    TodoService.toggleTodoStatus(todoId);
   }
 
-  //NOTE This method will pass an Id to your service for the TODO that will need to be deleted
-  removeTodo(todoId) {
-    // TodoService.removeTodoAsync(todoId);
+  delete(id) {
+    TodoService.removeTodo(id);
+  }
+  toggleTodos() {
+    toggleShowHide();
   }
 }

@@ -3,7 +3,7 @@ import store from "../store.js";
 
 function _drawQuote() {
   let quote = store.State.quote;
-  document.getElementById("quote").innerText = quote;
+  document.getElementById("quote").innerHTML = quote.Template;
 }
 export default class QuoteController {
   constructor() {

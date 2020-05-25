@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script
+    src="https://kit.fontawesome.com/d81e10aab1.js"
+    crossorigin="anonymous"
+    ></script>
+   
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/d81e10aab1.js"
-      crossorigin="anonymous"
-    ></script>
-
     <title>Notespirate</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -25,49 +28,59 @@
         <div id="background-image" class="col-12 img-container"></div>
       </div>
       <div class="row">
-          <div class="col-4 m-0 p-0">
-            <div class="mt-3 ml-3">
-              <h1>
-                <i title="tasks" class="d-inline my-card fas fa-tasks action"></i>
-              </h1>
-            </div>
+        <div class="col-4 d-flex ">
+          <div class="p-0 mt-3 mr-3 m-0 vh-20" id="weather"></div>
         </div>
-        <div class="col-4 mt-3">
-          <div class="text-center" id="clock">
+          <div class="col-4 ">
+            <div class="text-center mt-3" id="clock">   
+            </div>
+          </div>
           
-          </div>
-        </div>
-        <div class="col-4 d-flex justify-content-end">
-          <div class="p-0 mt-3 mr-3  m-0 vh-20" id="weather"></div>
-
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-10 offset-1 my-card">
-          <div class="row">
-            <div class="col-12 ">
-              <form class="py-1 my-1 d-flex justify-content-center
-              align-items-center" >
-                <input type="text"
-                 placeholder="List name">
-                 <button type="button" class="btn btn-success">Create list</button>
-              </form>
-              <i class=" fas fa-window-close a-t-r"></i>
-            </div>
-            <div id="todos">
-
-            </div>
+          
+        <div class="col-4 m-0 p-0">
+          <div class="mt-3 ml-3">
+            <h3 class="text-right mr-3">
+              <i onclick="app.toDoController.toggleTodos()" title="tasks" class="d-inline my-card fas fa-tasks action"></i>
+            </h3>
           </div>
       </div>
+      </div>
+    </div>
+    <div id="todoSection"  class="row hidden">
+      <div  class="col-10 offset-1 my-card">
+        <div class="row">
+          <div class="col-11">
+            <form onsubmit="app.toDoController.addTodo(event)" class="py-1 my-1 d-flex
+            align-items-center" >
+            <input type="text"
+            name="todo"
+            placeholder="List name">
+            <button type="submit" class="btn btn-success">Add tsk
+            </form>
+          </div>
+            <div class="col-1"><i onclick="app.toDoController.toggleTodos()" class=" fas fa-window-close a-t-r action "></i>
+            </div>
+            <div class="col-12">
+              <div id="todos" class="row">
+
+            
+              
+            </div>
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
       <div class="row">
         <div class="col-12">
-          <div class="footer fixed-bottom p-1 ">
-            <p id="quote" class="my-card d-inline p-3"></p>
+          <div id="quote" class="footer fixed-bottom p-1 ">
+            
           </div>
         </div>
       </div>
     </main>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     <script type="module" src="app/main.js"></script>
   </body>
