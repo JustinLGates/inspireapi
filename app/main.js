@@ -1,4 +1,4 @@
-import ClockController from "./controllers/clockController.js";
+import ClockController from "./controllers/ClockController.js";
 import WeatherController from "./controllers/weather-controller.js";
 import ImageController from "./controllers/image-controller.js";
 import QuoteController from "./controllers/quote-controller.js";
