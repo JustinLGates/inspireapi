@@ -88,6 +88,7 @@ class Store {
     let jsonData = window.localStorage.getItem("user");
     if (jsonData) {
       let newUser = new User(JSON.parse(jsonData));
+
       this.commit("user", newUser);
       return;
     }

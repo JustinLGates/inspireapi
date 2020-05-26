@@ -6,6 +6,7 @@ export default class Clock {
     this.hour = data.hour;
     this.minutes = data.minutes;
     this.isAm = data.isAm;
+    this.phrase = data.phrase;
   }
 
   get Template() {

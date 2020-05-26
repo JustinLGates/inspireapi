@@ -129,7 +129,8 @@ The todos portion of this project is the largest and will probably take the most
 
 -[x] On hover the quote should show the author of the quote and disappear when not hovered over
 
-- Allow the user to set their name and have it save to localStorage
+-[x] Allow the user to set their name and have it save to localStorage
+
 - Change the message from Good Morning to Good Afternoon, Evening as appropriate.
 - Allow the user to toggle the clock from, 12hr to 24hr.
 - Include an Icon to show what the weather is sunny/cloudy/rainy
