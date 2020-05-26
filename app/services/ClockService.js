@@ -1,5 +1,6 @@
 import Clock from "../models/Clock.js";
 import Store from "../store.js";
+
 function startClock() {
   updateClock();
 
@@ -12,6 +13,7 @@ function updateClock() {
   let clock = new Clock(getData());
   Store.commit("clock", clock);
 }
+let isArmyTime;
 function getData() {
   let date = new Date();
   let mo = date.getMonth();
@@ -21,7 +23,9 @@ function getData() {
   let yr = date.getFullYear();
   let isAm = date.getHours() >= 12 ? true : false;
   let timeOfDay = "";
-
+  let armyTime = date.getHours();
+  let isarmytime;
+  isArmyTime ? (isarmytime = true) : (isarmytime = false);
   if (h >= 22 || h < 5) {
     timeOfDay = "Good night";
   } else if (h >= 17) {
@@ -40,12 +44,20 @@ function getData() {
     minutes: m,
     isAm: isAm,
     phrase: timeOfDay,
+    armyH: armyTime,
+    armyTime: isarmytime,
   };
 
   return data;
 }
 
 class ClockService {
+  toggleArmyTime() {
+    let inArmyTime = Store.State.clock.armyTime;
+    inArmyTime ? (isArmyTime = false) : (isArmyTime = true);
+    updateClock();
+  }
+
   constructor() {}
   start() {
     startClock();

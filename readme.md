@@ -112,7 +112,7 @@ The todos portion of this project is the largest and will probably take the most
   - [x] Quote: Quote always displayed and Author reveals on hover
   - [x] Image: The image is required, however the additional data is optional
   - [x] Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
-  - [ ] Todo: Todo's are shown on the page including a count of remaining tasks to complete
+  - [x] Todo: Todo's are shown on the page including a count of remaining tasks to complete
 - [x] The image should be on large display with at least one other element positioned over the top of the image.
 - [x] When adding a Todo the page does not reload
 - [x] Completed Todo's checkbox remains checked on reload ([hint: checked attribute](https://www.w3schools.com/tags/att_input_checked.asp))
@@ -131,7 +131,8 @@ The todos portion of this project is the largest and will probably take the most
 
 -[x] Allow the user to set their name and have it save to localStorage
 
-- Change the message from Good Morning to Good Afternoon, Evening as appropriate.
+-[x] Change the message from Good Morning to Good Afternoon, Evening as appropriate.
+
 - Allow the user to toggle the clock from, 12hr to 24hr.
 - Include an Icon to show what the weather is sunny/cloudy/rainy
 - Add a button to cycle to next quote/picture

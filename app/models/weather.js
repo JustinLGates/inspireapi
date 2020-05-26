@@ -12,7 +12,7 @@ export default class Weather {
     <div class="text-left my-card">
         <div class="d-flex justify-content-between">
           <h4 class="p-2">${this.city}</h4>
-          <h3 class="p-2"><i title="change temp display" onclick="app.weatherController.toggleTemp()" class="fas fa-thermometer-three-quarters action"></i></h3>
+          <h3 class="p-2"><i title="change temp display" onclick="app.weatherController.toggleTemp()" class=" cornflour-text  fas fa-thermometer-three-quarters action"></i></h3>
         </div>
         <h3 class="pl-2 d-inline">${
           this.displayF ? this.farenheit : this.celsius

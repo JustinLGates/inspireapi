@@ -13,4 +13,7 @@ export default class clockController {
     CLOCK_SERVICE.start();
     _drawGreating();
   }
+  toggleArmyTime() {
+    CLOCK_SERVICE.toggleArmyTime();
+  }
 }
